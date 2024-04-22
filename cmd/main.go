@@ -1,17 +1,11 @@
 package main
 
-import "github.com/spf13/cobra"
+import (
+	"fmt"
+
+	"github.com/IsaqueAmorim/gite/entity/branch"
+)
 
 func main() {
-}
-
-func Commit() *cobra.Command {
-	return &cobra.Command{
-		Use:   "commit",
-		Short: "Record changes to the repository",
-		Long:  "Record changes to the repository",
-		Run: func(cmd *cobra.Command, args []string) {
-			// Do Stuff Here
-		},
-	}
+	fmt.Println(branch.NewBranch("132020", "[TaxPlus] [Livro Declaração de Faturamento] - Valor do IPI na nota de Devolução não está subtraindo").GetFullBranchName())
 }
