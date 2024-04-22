@@ -1,11 +1,15 @@
 package main
 
-import (
-	"fmt"
+import "github.com/IsaqueAmorim/gite/entity/config"
 
-	"github.com/IsaqueAmorim/gite/entity/branch"
+const (
+	ENV_CONFIG_PATH      = "GITE_CONFIG_PATH"
+	WINDOWS_DEFAULT_PATH = "C:/gite/"
 )
 
 func main() {
-	fmt.Println(branch.NewBranch("132020", "[TaxPlus] [Livro Declaração de Faturamento] - Valor do IPI na nota de Devolução não está subtraindo").GetFullBranchName())
+
+	//path := os.Getenv(ENV_CONFIG_PATH)
+	config.GetConfig()
+
 }
