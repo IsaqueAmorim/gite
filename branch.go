@@ -15,5 +15,3 @@ func GetCurrentBranch() Branch {
 func (b Branch) GetNumber() int {
 	return b.Number
 }
-
-func 
