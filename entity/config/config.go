@@ -5,7 +5,10 @@ import (
 	"errors"
 	"io"
 	"os"
+	"os/exec"
 )
+
+var config *Config
 
 type Config struct {
 	ProtectedBranches []string
@@ -14,6 +17,7 @@ type Config struct {
 }
 
 func init() {
+	W()
 	CreateConfigFileIfNotExist()
 }
 
@@ -26,6 +30,8 @@ func GetDefaultConfig() *Config {
 }
 
 func CreateConfigFileIfNotExist() {
+
+	os.Setenv("GITE_PATH", "C:/bin/")
 
 	if _, err := os.Stat("giteconfig.json"); errors.Is(err, os.ErrNotExist) {
 
@@ -49,9 +55,13 @@ func GetConfig() *Config {
 
 	byteValue, _ := io.ReadAll(file)
 
-	var result *Config
+	json.Unmarshal(byteValue, &config)
 
-	json.Unmarshal(byteValue, &result)
+	return config
+}
 
-	return result
+func W() {
+
+	exec.Command("Set-Item", "-Path", `Env:\PATH`, "-Value", `$env:PATH;"C:\bin"`)
+
 }
