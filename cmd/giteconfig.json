@@ -1,0 +1,13 @@
+{
+	"ProtectedBranches": [
+		"main",
+		"release",
+		"master"
+	],
+	"AutomaticPushWhenCommiting": false,
+	"LengthBranchPrefix": 6,
+	"AutomaticCheckoutToNewBranch": true,
+	"DefaultBranch": "release",
+	"IgnoreValidations": false,
+	"ChechoutDefaultBranchBeforeCreateNewBranch": true
+}

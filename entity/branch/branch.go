@@ -51,21 +51,3 @@ func getFormatedName(name string) string {
 
 	return strings.ToLower(str)
 }
-
-// func StringToBranch(name string) *Branch {
-
-// 	var prefix, branchName string
-
-// 	if nameArr := strings.Split(name, "-"); len(nameArr) > 1 {
-// 		prefix = nameArr[0]
-// 		branchName = strings.Join(nameArr[1:], "-")
-// 	} else {
-// 		prefix = ""
-// 		branchName = name
-// 	}
-
-// 	return &Branch{
-// 		Prefix: prefix,
-// 		Name:   branchName,
-// 	}
-// }
